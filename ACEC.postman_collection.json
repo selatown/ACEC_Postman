@@ -1,0 +1,2972 @@
+{
+	"info": {
+		"_postman_id": "3e4ae11d-e648-443d-a1fd-f5a71ac88969",
+		"name": "ACEC",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Payment",
+			"item": [
+				{
+					"name": "Authentication",
+					"item": [
+						{
+							"name": "Login",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\":\"sothea.korng\",\n    \"password\":\"pass$$$1234\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/auth",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"auth"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Enroll",
+					"item": [
+						{
+							"name": "Get Enroll",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.U09USEVBLktPUk5H.jLNKtxEsXrzKt4B1g_O-oFFCJdnbEDKjQ5YufmOASzg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/enroll?search=54211",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"enroll"
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "1",
+											"disabled": true
+										},
+										{
+											"key": "offset",
+											"value": "0",
+											"disabled": true
+										},
+										{
+											"key": "search",
+											"value": "54211",
+											"description": "ContactID"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Find Student Enroll ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/enroll/getenrollid?contactId=54211&studyYear=2021-2022",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"enroll",
+										"getenrollid"
+									],
+									"query": [
+										{
+											"key": "contactId",
+											"value": "54211"
+										},
+										{
+											"key": "studyYear",
+											"value": "2021-2022"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Enroll",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.U09USEVBLktPUk5H.jLNKtxEsXrzKt4B1g_O-oFFCJdnbEDKjQ5YufmOASzg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"campus\":\"AC\",\r\n    \"classId\":1,\r\n    \"contactId\":8293419\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/enroll",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"enroll"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Enroll",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"campus\":\"AC\",\r\n    \"classId\":1,\r\n    \"contactId\":8293419\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/enroll/AC-4",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"enroll",
+										"AC-4"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Enroll",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/enroll/3",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"enroll",
+										"3"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Payment",
+					"item": [
+						{
+							"name": "Get Payment List",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/payment",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"payment"
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "1",
+											"disabled": true
+										},
+										{
+											"key": "offset",
+											"value": "0",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Payment History",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/payment/history?enrollId=CV-2",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"payment",
+										"history"
+									],
+									"query": [
+										{
+											"key": "enrollId",
+											"value": "CV-2"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get By Invoice ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/payment/invoice/AC-1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"payment",
+										"invoice",
+										"AC-1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get By Contact ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/payment/contact/1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"payment",
+										"contact",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Registration List",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/payment/registration?contactId=54211",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"payment",
+										"registration"
+									],
+									"query": [
+										{
+											"key": "contactId",
+											"value": "54211"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Registration",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"campus\":\"CV\",\r\n    \"studyYear\":\"2021-2022\",\r\n    \"contactId\":8508308,\r\n    \"interviewDate\":\"2021-02-04 02:30\",\r\n    \"grade\":\"grade 7\",\r\n    \"scholarship\":\"ACE\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/payment/register",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"payment",
+										"register"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Make Payment",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n    {\r\n        \"invoiceId\":\"TK-3\",\r\n        \"tuitionFeeId\":44,\r\n        \"discount\":0,\r\n        \"note\":\"test Note\"\r\n    },\r\n    {\r\n        \"invoiceId\":\"TK-3\",\r\n        \"otherServiceFeeId\":20,\r\n        \"discount\":0\r\n    }\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/payment",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"payment"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Payment",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"invoiceId\":\"A-5\",\r\n    \"otherServiceFeeId\":1,\r\n    \"discount\":6,\r\n    \"scholarship\":\"ACE 30%\",\r\n    \"note\":\"test Note\",\r\n    \"grade\":\"Grade 9\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/payment/1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"payment",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Payment",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/payment/1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"payment",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Invoice",
+					"item": [
+						{
+							"name": "Add Invoice",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.U09USEVBLktPUk5H.jLNKtxEsXrzKt4B1g_O-oFFCJdnbEDKjQ5YufmOASzg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"contactId\":54211,\r\n    \"studyYear\":\"2021-2022\",\r\n    \"enrollId\":\"CV-10\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/invoice",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"invoice"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get By Student ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/invoice/student/8293419",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"invoice",
+										"student",
+										"8293419"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Invoice Detail",
+					"item": [
+						{
+							"name": "Get Invoice Detail",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.U09USEVBLktPUk5H.jLNKtxEsXrzKt4B1g_O-oFFCJdnbEDKjQ5YufmOASzg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/invoicedetail?search=AC-01",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"invoicedetail"
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "1",
+											"disabled": true
+										},
+										{
+											"key": "offset",
+											"value": "0",
+											"disabled": true
+										},
+										{
+											"key": "search",
+											"value": "AC-01"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Invoice Detail",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.U09USEVBLktPUk5H.jLNKtxEsXrzKt4B1g_O-oFFCJdnbEDKjQ5YufmOASzg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n    {\r\n        \"invoiceId\":\"AC-01\",\r\n        \"tuitionFeeId\":1,\r\n        \"otherServiceFeeId\":0,\r\n        \"discount\":0,\r\n        \"scholarshipName\":\"ACE\",\r\n        \"note\":\"Nothing\"\r\n    },\r\n        {\r\n        \"invoiceId\":\"AC-01\",\r\n        \"tuitionFeeId\":2,\r\n        \"otherServiceFeeId\":0,\r\n        \"discount\":0,\r\n        \"scholarshipName\":\"ACE\",\r\n        \"note\":\"Nothing\"\r\n    }\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/invoicedetail",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"invoicedetail"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Invoice Detail",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"invoiceId\":\"AC-01\",\r\n    \"tuitionFeeId\":1,\r\n    \"otherServiceFeeId\":0,\r\n    \"discount\":0,\r\n    \"scholarshipName\":\"ACE\",\r\n    \"note\":\"Nothing\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/invoicedetail/1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"invoicedetail",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Invoice Detail",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/invoicedetail/1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"invoicedetail",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "OtherServiceFee",
+					"item": [
+						{
+							"name": "Get Other Service Fee List",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.U09USEVBLktPUk5H.jLNKtxEsXrzKt4B1g_O-oFFCJdnbEDKjQ5YufmOASzg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/otherservicefee",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"otherservicefee"
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "10",
+											"disabled": true
+										},
+										{
+											"key": "offset",
+											"value": "0",
+											"disabled": true
+										},
+										{
+											"key": "search",
+											"value": "reg",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get By Grade",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/otherservicefee/bygrade?grade=Grade 1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"otherservicefee",
+										"bygrade"
+									],
+									"query": [
+										{
+											"key": "grade",
+											"value": "Grade 1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Other Service Fee",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.U09USEVBLktPUk5H.jLNKtxEsXrzKt4B1g_O-oFFCJdnbEDKjQ5YufmOASzg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"serviceDescription\":\"Buy\",\r\n    \"fee\":5\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/otherservicefee",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"otherservicefee"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Other Service Fee",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"serviceDescription\":\"Sell\",\r\n    \"fee\":5\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/otherservicefee/1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"otherservicefee",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Other Service Fee",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/otherservicefee/1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"otherservicefee",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "TuitionFee",
+					"item": [
+						{
+							"name": "Get Tuition Fee List",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.U09USEVBLktPUk5H.jLNKtxEsXrzKt4B1g_O-oFFCJdnbEDKjQ5YufmOASzg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/tuitionfee?grade=grade 12&year=2021-2022",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"tuitionfee"
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "1",
+											"disabled": true
+										},
+										{
+											"key": "offset",
+											"value": "0",
+											"disabled": true
+										},
+										{
+											"key": "grade",
+											"value": "grade 12",
+											"description": "can combine both for (AND) clause"
+										},
+										{
+											"key": "year",
+											"value": "2021-2022",
+											"description": "can combine both for (AND) clause"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get TuitionFee For All Period",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/tuitionfee/period?enrollId=VC-2",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"tuitionfee",
+										"period"
+									],
+									"query": [
+										{
+											"key": "enrollId",
+											"value": "VC-2"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Tuition Fees",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.U09USEVBLktPUk5H.jLNKtxEsXrzKt4B1g_O-oFFCJdnbEDKjQ5YufmOASzg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n    {\r\n        \"periodId\":4,\r\n        \"grade\":\"grade 7\",\r\n        \"fee\":5\r\n    },\r\n    {\r\n        \"periodId\":3,\r\n        \"grade\":\"grade 7\",\r\n        \"fee\":1\r\n    }\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/tuitionfee",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"tuitionfee"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Tuition Fee",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"periodId\":3,\r\n    \"grade\":\"grade 13\",\r\n    \"fee\":13\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/tuitionfee/1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"tuitionfee",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Tuition Fee",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/tuitionfee/1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"tuitionfee",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Period",
+					"item": [
+						{
+							"name": "Get Period",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.U09USEVBLktPUk5H.jLNKtxEsXrzKt4B1g_O-oFFCJdnbEDKjQ5YufmOASzg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/period",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"period"
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "1",
+											"disabled": true
+										},
+										{
+											"key": "offset",
+											"value": "0",
+											"disabled": true
+										},
+										{
+											"key": "search",
+											"value": "2021-2022",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Period",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.U09USEVBLktPUk5H.jLNKtxEsXrzKt4B1g_O-oFFCJdnbEDKjQ5YufmOASzg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"studyYear\":\"2021-2022\",\r\n    \"periodName\":\"Semester 1\",\r\n    \"periodType\":\"Semester\",\r\n    \"period\":12,\r\n    \"startDate\":\"2021-02-04\",\r\n    \"endDate\":\"2021-04-03\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/period",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"period"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Period",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"studyYear\":\"2021-2022\",\r\n    \"periodName\":\"Semester 1\",\r\n    \"periodType\":\"Semester\",\r\n    \"period\":12,\r\n    \"startDate\":\"2021-02-04\",\r\n    \"endDate\":\"2021-04-03\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/period/4",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"period",
+										"4"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Period",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/period/3",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"period",
+										"3"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Student",
+					"item": [
+						{
+							"name": "Search Student",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/student?name=pheakdey",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"student"
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "pheakdey",
+											"description": "name,dob,phone"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Schedule",
+			"item": [
+				{
+					"name": "Grade",
+					"item": [
+						{
+							"name": "Get Grades",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/grade",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"grade"
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "1",
+											"disabled": true
+										},
+										{
+											"key": "offset",
+											"value": "0",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Grade",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"grade\":\"Grade 6\",\r\n    \"studyYear\":\"2020-2021\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/grade",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"grade"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Grade",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"grade\":\"Grade 4\",\r\n    \"studyYear\":\"2020-2021\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/grade/2",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"grade",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Grade",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/grade/1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"grade",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get GradeSchedule",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/grade/schedule?gradeName=Grade 1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"grade",
+										"schedule"
+									],
+									"query": [
+										{
+											"key": "gradeName",
+											"value": "Grade 1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Grade Schedule",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"gradeName\":\"Grade 6\",\r\n    \"time\":\"10:00-12:00\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/grade/schedule",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"grade",
+										"schedule"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Grade Schedule",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"gradeName\":\"Grade 7\",\r\n    \"time\":\"10:00-12:00\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/grade/schedule/1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"grade",
+										"schedule",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Grade Schedule",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/grade/schedule/2",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"grade",
+										"schedule",
+										"2"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Class",
+					"item": [
+						{
+							"name": "Get Classes",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/class",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"class"
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "1",
+											"disabled": true
+										},
+										{
+											"key": "offset",
+											"value": "0",
+											"disabled": true
+										},
+										{
+											"key": "gradeName",
+											"value": "12A",
+											"description": "can combine for AND clause",
+											"disabled": true
+										},
+										{
+											"key": "studyYear",
+											"value": "2021-2022",
+											"description": "can combine for AND clause",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Class By Id",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/class/3",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"class",
+										"3"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Class",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"grade\":\"Grade 6\",\r\n    \"gradeName\":\"Grade 6A\",\r\n    \"gradeNameKH\":\"ថ្នាក់​ទី ៦\",\r\n    \"studyYear\":\"2020-2021\",\r\n    \"roomId\":1,\r\n    \"room\":\"AC-92941\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/class",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"class"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Class",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"grade\":\"Grade 6\",\r\n    \"gradeName\":\"Grade 6A\",\r\n    \"gradeNameKH\":\"ថ្នាក់​ទី ៦\",\r\n    \"studyYear\":\"2020-2021\",\r\n    \"roomId\":1,\r\n    \"room\":\"AC-92941\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/class/1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"class",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Grade",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/class/1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"class",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Class Detail",
+					"item": [
+						{
+							"name": "Get Class Details List",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/classdetail",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"classdetail"
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "1",
+											"disabled": true
+										},
+										{
+											"key": "offset",
+											"value": "0",
+											"disabled": true
+										},
+										{
+											"key": "search",
+											"value": "Grade 7",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Class Details By Id",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/classdetail/87",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"classdetail",
+										"87"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Class Detail",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"classId\":1,\r\n    \"subject\":\"Math\",\r\n    \"subjectId\":1,\r\n    \"teacher\":\"seyla\",\r\n    \"teacherId\":1,\r\n    \"period\":\"test\",\r\n    \"periodId\":1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/classdetail",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"classdetail"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Class Detail",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"classId\":1,\r\n    \"subject\":\"khmer\",\r\n    \"subjectId\":1,\r\n    \"teacher\":\"seyla\",\r\n    \"teacherId\":1,\r\n    \"period\":\"test\",\r\n    \"periodId\":1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/classdetail/1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"classdetail",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Class Detail",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/class/1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"class",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Class Schedule",
+					"item": [
+						{
+							"name": "Get Class Schedule List",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/classschedule",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"classschedule"
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "1",
+											"disabled": true
+										},
+										{
+											"key": "offset",
+											"value": "0",
+											"disabled": true
+										},
+										{
+											"key": "search",
+											"value": "Grade 7",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Class Schedule By Id",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/classschedule/1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"classschedule",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Class Schedule By ClassId And PeriodId",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/classschedule/byclassandperiod?classId=12&periodId=2",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"classschedule",
+										"byclassandperiod"
+									],
+									"query": [
+										{
+											"key": "classId",
+											"value": "12"
+										},
+										{
+											"key": "periodId",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Class Schedule",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"classDetailId\":1,\r\n    \"grade\":\"Grade 7\",\r\n    \"subject\":\"Math\",\r\n    \"teacher\":\"seyla\",\r\n    \"classDay\":\"Mon-Fri\",\r\n    \"classTime\":\"09:00-07:00\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/classschedule",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"classschedule"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Class Schedule",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"classDetailId\":1,\r\n    \"grade\":\"Grade 8\",\r\n    \"subject\":\"Math\",\r\n    \"teacher\":\"seyla\",\r\n    \"classDay\":\"Mon-Fri\",\r\n    \"classTime\":\"09:00-07:00\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/classschedule/1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"classschedule",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Class Detail",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/classschedule/1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"classschedule",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Subject",
+					"item": [
+						{
+							"name": "Get Subjects",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/subject?limit=10&offset=0",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"subject"
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "10"
+										},
+										{
+											"key": "offset",
+											"value": "0"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Subject",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"subject\":\"Roman\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/subject",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"subject"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Grade",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"subject\":\"Physics\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/subject/1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"subject",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Grade",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/subject/1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"subject",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Study Year",
+					"item": [
+						{
+							"name": "Get Study Years",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/studyyear?limit=10",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"studyyear"
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "10"
+										},
+										{
+											"key": "offset",
+											"value": "0",
+											"disabled": true
+										},
+										{
+											"key": "search",
+											"value": "2022",
+											"disabled": true
+										},
+										{
+											"key": "status",
+											"value": "current",
+											"description": "Current ,Archived ,New",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Study Year",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"studyYear\":\"2020-2021\",\r\n    \"classStartDate\":\"2020-04-02\",\r\n    \"classEndDate\":\"2021-04-02\",\r\n    \"status\":\"New\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/studyyear",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"studyyear"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Study Year",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"studyYear\":\"2020-2021\",\r\n    \"classStartDate\":\"2020-04-02\",\r\n    \"classEndDate\":\"2021-04-02\",\r\n    \"status\":\"Current\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/studyyear/2",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"studyyear",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Grade",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/studyyear/6",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"studyyear",
+										"6"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Grade Subject",
+					"item": [
+						{
+							"name": "Get Grade Subjects",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/gradesubject?limit=10&offset=0",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"gradesubject"
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "10"
+										},
+										{
+											"key": "offset",
+											"value": "0"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Grade Subject",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"grade\":\"Grade 0\",\r\n    \"subject\":\"math\",\r\n    \"teacher\":\"keo veasna\",\r\n    \"classStartDate\":\"2020-04-02\",\r\n    \"classEndDate\":\"2021-04-02\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/gradesubject",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"gradesubject"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Grade Subject",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"grade\":\"Grade 1\",\r\n    \"subject\":\"math\",\r\n    \"teacher\":\"keo veasna\",\r\n    \"classStartDate\":\"2020-04-02\",\r\n    \"classEndDate\":\"2021-04-02\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/gradesubject/1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"gradesubject",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Grade",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/gradesubject/1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"gradesubject",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Subject Schedule",
+					"item": [
+						{
+							"name": "Get Subject Schedule",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/subjectschedule?limit=10&offset=0",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"subjectschedule"
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "10"
+										},
+										{
+											"key": "offset",
+											"value": "0"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Custom Subject Schedule",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/subjectschedule/gss?subjectId=9&teacherId=8508308",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"subjectschedule",
+										"gss"
+									],
+									"query": [
+										{
+											"key": "subjectId",
+											"value": "9"
+										},
+										{
+											"key": "teacherId",
+											"value": "8508308"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Subject Schedule",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"gradeSubjectId\":1,\r\n    \"grade\":\"Grade 0\",\r\n    \"subject\":\"math\",\r\n    \"classDay\":\"Mon-Fri\",\r\n    \"classTime\":\"03:00-04-00\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/subjectschedule",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"subjectschedule"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Set Subject Schedule",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"classId\":1,\r\n    \"subjectId\":1,\r\n    \"periodId\":1,\r\n    \"classDay\":\"Mon-Fri\",\r\n    \"classTime\":\"07:00-09:00\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/subjectschedule/set",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"subjectschedule",
+										"set"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Grade Subject",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"gradeSubjectId\":1,\r\n    \"grade\":\"Grade 1\",\r\n    \"subject\":\"math\",\r\n    \"classDay\":\"Mon-Fri\",\r\n    \"classTime\":\"03:00-04-00\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/subjectschedule/1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"subjectschedule",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Grade",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/subjectschedule/1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"subjectschedule",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Teacher",
+					"item": [
+						{
+							"name": "Get Teachers",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/teacher",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"teacher"
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "1",
+											"disabled": true
+										},
+										{
+											"key": "offset",
+											"value": "0",
+											"disabled": true
+										},
+										{
+											"key": "search",
+											"value": "sothea",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Set Teacher Schedule",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"classId\":12,\n    \"teacherId\":54211,\n    \"periodId\":23,\n    \"classDay\":\"Mon-Fri\",\n    \"classTime\":\"07:00-09:00\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/teacher/setschedule",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"teacher",
+										"setschedule"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "b47a7830-5f96-4d12-8551-b3ba572a885f",
+			"key": "baseUrl",
+			"value": "https://acecapi.azurewebsites.net",
+			"disabled": true
+		},
+		{
+			"id": "3e2f5306-f081-4c5d-bfdf-c9185d7ae9b9",
+			"key": "token",
+			"value": "eyJhbGciOiJIUzI1NiJ9.U09USEVBLktPUk5H.jLNKtxEsXrzKt4B1g_O-oFFCJdnbEDKjQ5YufmOASzg"
+		},
+		{
+			"id": "91ca55b6-85c5-4f6f-88ea-d40d1975d283",
+			"key": "baseUrl",
+			"value": "http://localhost:8080"
+		}
+	]
+}
