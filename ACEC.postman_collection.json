@@ -412,7 +412,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"campus\":\"CV\",\r\n    \"studyYear\":\"2021-2022\",\r\n    \"contactId\":8508308,\r\n    \"interviewDate\":\"2021-02-04 02:30\",\r\n    \"grade\":\"grade 7\",\r\n    \"scholarship\":\"ACE\"\r\n}",
+									"raw": "{\r\n    \"campus\":\"CV\",\r\n    \"studyYear\":\"2021-2022\",\r\n    \"contactId\":8508308,\r\n    \"interviewDate\":\"2021-02-04 02:30\",\r\n    \"grade\":\"grade 7\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1653,6 +1653,63 @@
 											"description": "can combine for AND clause",
 											"disabled": true
 										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Current Class",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/class/current/54211",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"class",
+										"current",
+										"54211"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Rooms",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/class/rooms",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"class",
+										"rooms"
 									]
 								}
 							},
@@ -2953,18 +3010,15 @@
 	],
 	"variable": [
 		{
-			"id": "b47a7830-5f96-4d12-8551-b3ba572a885f",
 			"key": "baseUrl",
 			"value": "https://acecapi.azurewebsites.net",
 			"disabled": true
 		},
 		{
-			"id": "3e2f5306-f081-4c5d-bfdf-c9185d7ae9b9",
 			"key": "token",
 			"value": "eyJhbGciOiJIUzI1NiJ9.U09USEVBLktPUk5H.jLNKtxEsXrzKt4B1g_O-oFFCJdnbEDKjQ5YufmOASzg"
 		},
 		{
-			"id": "91ca55b6-85c5-4f6f-88ea-d40d1975d283",
 			"key": "baseUrl",
 			"value": "http://localhost:8080"
 		}
