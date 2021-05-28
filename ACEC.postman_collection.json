@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "3e4ae11d-e648-443d-a1fd-f5a71ac88969",
+		"_postman_id": "759f988a-f87b-435b-9de6-272661a27d08",
 		"name": "ACEC",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -535,6 +535,44 @@
 									"path": [
 										"payment",
 										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Application Result",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"invoiceId\":\"A-5\",\r\n    \"result\":\"asdasd\",\r\n    \"interviewerContactId\":6\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/payment/registration/result",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"payment",
+										"registration",
+										"result"
 									]
 								}
 							},
@@ -3233,7 +3271,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseUrl}}/report/application?fromDate=2021-04-28&toDate=2021-05-28&campus=CV",
+							"raw": "{{baseUrl}}/report/application?fromDate=2021-04-28&toDate=2021-05-28&campus=CVA",
 							"host": [
 								"{{baseUrl}}"
 							],
@@ -3252,7 +3290,7 @@
 								},
 								{
 									"key": "campus",
-									"value": "CV"
+									"value": "CVA"
 								}
 							]
 						}
