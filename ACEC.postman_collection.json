@@ -141,7 +141,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"campus\":\"VM\",\r\n    \"classId\":1,\r\n    \"contactId\":8293419\r\n}",
+									"raw": "{\r\n    \"campus\":\"CV\",\r\n    \"classId\":12,\r\n    \"contactId\":54211\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1877,6 +1877,40 @@
 									"path": [
 										"class",
 										"3"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Class Register By Id",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/class/registerbyid?classId=12",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"class",
+										"registerbyid"
+									],
+									"query": [
+										{
+											"key": "classId",
+											"value": "12"
+										}
 									]
 								}
 							},
