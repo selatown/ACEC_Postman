@@ -141,7 +141,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"campus\":\"AC\",\r\n    \"classId\":1,\r\n    \"contactId\":8293419\r\n}",
+									"raw": "{\r\n    \"campus\":\"VM\",\r\n    \"classId\":1,\r\n    \"contactId\":8293419\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -285,7 +285,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{baseUrl}}/payment/history?enrollId=CV-2",
+									"raw": "{{baseUrl}}/payment/history?enrollId=CV-E1000003",
 									"host": [
 										"{{baseUrl}}"
 									],
@@ -296,7 +296,7 @@
 									"query": [
 										{
 											"key": "enrollId",
-											"value": "CV-2"
+											"value": "CV-E1000003"
 										}
 									]
 								}
@@ -484,7 +484,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "[\r\n    {\r\n        \"invoiceId\":\"TK-3\",\r\n        \"tuitionFeeId\":44,\r\n        \"discount\":0,\r\n        \"note\":\"test Note\"\r\n    },\r\n    {\r\n        \"invoiceId\":\"TK-3\",\r\n        \"otherServiceFeeId\":20,\r\n        \"discount\":0\r\n    }\r\n]",
+									"raw": "[\r\n    {\r\n        \"invoiceId\":\"CV-1000019\",\r\n        \"tuitionFeeId\":44,\r\n        \"discount\":0,\r\n        \"note\":\"test Note\"\r\n    },\r\n    {\r\n        \"invoiceId\":\"CV-1000019\",\r\n        \"otherServiceFeeId\":20,\r\n        \"discountAmount\":0\r\n    }\r\n]",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -590,7 +590,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"contactId\":54211,\r\n    \"studyYear\":\"2021-2022\",\r\n    \"enrollId\":\"CV-10\"\r\n}",
+									"raw": "{\r\n    \"campus\":\"CV\",\r\n    \"enrollId\":\"CV-10\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -865,6 +865,72 @@
 											"key": "grade",
 											"value": "Grade 1"
 										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get By Category",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/otherservicefee/bycategory?contactId=54211&category=Lunch",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"otherservicefee",
+										"bycategory"
+									],
+									"query": [
+										{
+											"key": "contactId",
+											"value": "54211"
+										},
+										{
+											"key": "category",
+											"value": "Lunch"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get By Category Copy",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/otherservicefee/category",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"otherservicefee",
+										"category"
 									]
 								}
 							},
@@ -1331,7 +1397,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{baseUrl}}/student?name=pheakdey",
+									"raw": "{{baseUrl}}/student?dob=1985-04-03",
 									"host": [
 										"{{baseUrl}}"
 									],
@@ -1340,8 +1406,8 @@
 									],
 									"query": [
 										{
-											"key": "name",
-											"value": "pheakdey",
+											"key": "dob",
+											"value": "1985-04-03",
 											"description": "name,dob,phone"
 										}
 									]
@@ -3021,6 +3087,179 @@
 					]
 				}
 			]
+		},
+		{
+			"name": "Report",
+			"item": [
+				{
+					"name": "School Fee",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/report/schoolfee?fromDate=2021-04-28&toDate=2021-05-28&campus=CV",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"report",
+								"schoolfee"
+							],
+							"query": [
+								{
+									"key": "fromDate",
+									"value": "2021-04-28"
+								},
+								{
+									"key": "toDate",
+									"value": "2021-05-28"
+								},
+								{
+									"key": "campus",
+									"value": "CV"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PT by date",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/report/pt?fromDate=2021-04-28&toDate=2021-05-28&campus=CV",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"report",
+								"pt"
+							],
+							"query": [
+								{
+									"key": "fromDate",
+									"value": "2021-04-28"
+								},
+								{
+									"key": "toDate",
+									"value": "2021-05-28"
+								},
+								{
+									"key": "campus",
+									"value": "CV"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Enrolment By Date",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/report/enrolment?fromDate=2021-04-28&toDate=2021-05-28&campus=CV",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"report",
+								"enrolment"
+							],
+							"query": [
+								{
+									"key": "fromDate",
+									"value": "2021-04-28"
+								},
+								{
+									"key": "toDate",
+									"value": "2021-05-28"
+								},
+								{
+									"key": "campus",
+									"value": "CV"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Application By Date",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/report/application?fromDate=2021-04-28&toDate=2021-05-28&campus=CV",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"report",
+								"application"
+							],
+							"query": [
+								{
+									"key": "fromDate",
+									"value": "2021-04-28"
+								},
+								{
+									"key": "toDate",
+									"value": "2021-05-28"
+								},
+								{
+									"key": "campus",
+									"value": "CV"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	],
 	"event": [
@@ -3046,8 +3285,7 @@
 	"variable": [
 		{
 			"key": "baseUrl",
-			"value": "https://acecapi.azurewebsites.net",
-			"disabled": true
+			"value": "https://acecapi.azurewebsites.net"
 		},
 		{
 			"key": "token",
