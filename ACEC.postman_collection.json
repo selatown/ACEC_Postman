@@ -285,7 +285,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{baseUrl}}/payment/reprint?invoiceId=421",
+									"raw": "{{baseUrl}}/payment/reprint?invoiceId=CV-1000021",
 									"host": [
 										"{{baseUrl}}"
 									],
@@ -296,7 +296,7 @@
 									"query": [
 										{
 											"key": "invoiceId",
-											"value": "421"
+											"value": "CV-1000021"
 										}
 									]
 								}
@@ -3186,6 +3186,40 @@
 							"response": []
 						},
 						{
+							"name": "Get Teachers Schedule",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/teacher/getteacherschedule?studyYear=2021-2022",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"teacher",
+										"getteacherschedule"
+									],
+									"query": [
+										{
+											"key": "studyYear",
+											"value": "2021-2022"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
 							"name": "Set Teacher Schedule",
 							"request": {
 								"auth": {
@@ -3465,7 +3499,8 @@
 	"variable": [
 		{
 			"key": "baseUrl",
-			"value": "https://acecapi.azurewebsites.net"
+			"value": "https://acecapi.azurewebsites.net",
+			"disabled": true
 		},
 		{
 			"key": "token",
