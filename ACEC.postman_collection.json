@@ -986,7 +986,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{baseUrl}}/otherservicefee/bycategory?contactId=54211&category=Lunch",
+									"raw": "{{baseUrl}}/otherservicefee/bycategory?contactId=125174121&category=Lunch",
 									"host": [
 										"{{baseUrl}}"
 									],
@@ -997,7 +997,7 @@
 									"query": [
 										{
 											"key": "contactId",
-											"value": "54211"
+											"value": "125174121"
 										},
 										{
 											"key": "category",
@@ -1843,8 +1843,8 @@
 											"disabled": true
 										},
 										{
-											"key": "gradeName",
-											"value": "12A",
+											"key": "grade",
+											"value": "grade 1",
 											"description": "can combine for AND clause",
 											"disabled": true
 										},
@@ -1875,14 +1875,14 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{baseUrl}}/class/current/54211",
+									"raw": "{{baseUrl}}/class/current/125174121",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
 										"class",
 										"current",
-										"54211"
+										"125174121"
 									]
 								}
 							},
@@ -1999,7 +1999,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"grade\":\"Grade 6\",\r\n    \"gradeName\":\"Grade 6A\",\r\n    \"gradeNameKH\":\"ថ្នាក់​ទី ៦\",\r\n    \"studyYear\":\"2020-2021\",\r\n    \"roomId\":1,\r\n    \"room\":\"AC-92941\"\r\n}",
+									"raw": "{\r\n    \"grade\":\"Grade 6\",\r\n    \"gradeName\":\"Grade 6A\",\r\n    \"gradeNameKH\":\"ថ្នាក់​ទី ៦\",\r\n    \"studyYear\":\"2020-2021\",\r\n    \"roomId\":1,\r\n    \"room\":\"AC-92941\",\r\n    \"homeRoomTeacherId\":0,\r\n    \"teacherAssistant1Id\":0,\r\n    \"teacherAssistant2Id\":0,\r\n    \"homeRoomTeacher\":\"\",\r\n    \"teacherAssistant1\":\"\",\r\n    \"teacherAssistant2\":\"\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -2035,7 +2035,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"grade\":\"Grade 6\",\r\n    \"gradeName\":\"Grade 6A\",\r\n    \"gradeNameKH\":\"ថ្នាក់​ទី ៦\",\r\n    \"studyYear\":\"2020-2021\",\r\n    \"roomId\":1,\r\n    \"room\":\"AC-92941\"\r\n}",
+									"raw": "{\r\n    \"grade\":\"Grade 6\",\r\n    \"gradeName\":\"Grade 6A\",\r\n    \"gradeNameKH\":\"ថ្នាក់​ទី ៦\",\r\n    \"studyYear\":\"2020-2021\",\r\n    \"roomId\":1,\r\n    \"room\":\"AC-92941\",\r\n    \"homeRoomTeacherId\":1,\r\n    \"teacherAssistant1Id\":2,\r\n    \"teacherAssistant2Id\":3,\r\n    \"homeRoomTeacher\":\"Hapi\",\r\n    \"teacherAssistant1\":\"Hapi\",\r\n    \"teacherAssistant2\":\"Hapi\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -3201,7 +3201,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{baseUrl}}/teacher/getteacherschedule?studyYear=2021-2022",
+									"raw": "{{baseUrl}}/teacher/getteacherschedule",
 									"host": [
 										"{{baseUrl}}"
 									],
@@ -3212,7 +3212,46 @@
 									"query": [
 										{
 											"key": "studyYear",
-											"value": "2021-2022"
+											"value": "2021-2022",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Teachers Schedule By Teacher Id",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/teacher/byteacherid?teacherId=1231&periodId=4124124",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"teacher",
+										"byteacherid"
+									],
+									"query": [
+										{
+											"key": "teacherId",
+											"value": "1231"
+										},
+										{
+											"key": "periodId",
+											"value": "4124124"
 										}
 									]
 								}
@@ -3453,7 +3492,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"contactId\":\"54211\",\n    \"chipId\":\"5937937\"\n}",
+							"raw": "{\n    \"chipId\":125175121\n}",
 							"options": {
 								"raw": {
 									"language": "json"
