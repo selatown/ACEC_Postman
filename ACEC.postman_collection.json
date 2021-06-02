@@ -986,7 +986,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{baseUrl}}/otherservicefee/bycategory?contactId=125174121&category=Lunch",
+									"raw": "{{baseUrl}}/otherservicefee/bycategory?contactId=54211&category=Enrolment %26 Capital",
 									"host": [
 										"{{baseUrl}}"
 									],
@@ -997,11 +997,11 @@
 									"query": [
 										{
 											"key": "contactId",
-											"value": "125174121"
+											"value": "54211"
 										},
 										{
 											"key": "category",
-											"value": "Lunch"
+											"value": "Enrolment & Capital"
 										}
 									]
 								}
@@ -3201,7 +3201,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{baseUrl}}/teacher/getteacherschedule",
+									"raw": "{{baseUrl}}/teacher/getteacherschedule?studyYear=2021-2022&periodId=1",
 									"host": [
 										"{{baseUrl}}"
 									],
@@ -3212,8 +3212,81 @@
 									"query": [
 										{
 											"key": "studyYear",
-											"value": "2021-2022",
-											"disabled": true
+											"value": "2021-2022"
+										},
+										{
+											"key": "periodId",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Schedule Hour",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/teacher/schedulehour",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"teacher",
+										"schedulehour"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Teacher Schedule Summary",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/teacher/schedulesummary?teacherId=1&periodId=1&classDay=Mon-Fri",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"teacher",
+										"schedulesummary"
+									],
+									"query": [
+										{
+											"key": "teacherId",
+											"value": "1"
+										},
+										{
+											"key": "periodId",
+											"value": "1"
+										},
+										{
+											"key": "classDay",
+											"value": "Mon-Fri"
 										}
 									]
 								}
@@ -3492,7 +3565,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"chipId\":125175121\n}",
+							"raw": "{\n    \"chipId\":\"5937937\",\n    \"contactId\":0,\n    \"currentDateTime\":null\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -3507,6 +3580,38 @@
 							"path": [
 								"attendance",
 								"checkin"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Menu",
+			"item": [
+				{
+					"name": "Get Menu",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/menu",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"menu"
 							]
 						}
 					},
