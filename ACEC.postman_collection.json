@@ -198,6 +198,80 @@
 							"response": []
 						},
 						{
+							"name": "Change Class",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"enrollId\":\"CV-E1000021\",\r\n    \"newClassId\":1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/enroll/changeclass",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"enroll",
+										"changeclass"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Cancel Enrol",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"enrollId\":\"CV-E1000021\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/enroll/cancel",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"enroll",
+										"cancel"
+									]
+								}
+							},
+							"response": []
+						},
+						{
 							"name": "Delete Enroll",
 							"request": {
 								"auth": {
@@ -518,7 +592,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "[\r\n    {\r\n        \"invoiceId\":\"CV-1000019\",\r\n        \"tuitionFeeId\":44,\r\n        \"discount\":0,\r\n        \"note\":\"test Note\"\r\n    },\r\n    {\r\n        \"invoiceId\":\"CV-1000019\",\r\n        \"otherServiceFeeId\":20,\r\n        \"discountAmount\":0\r\n    }\r\n]",
+									"raw": "[\r\n    {\r\n        \"invoiceId\":\"CV-1000019\",\r\n        \"tuitionFeeId\":44,\r\n        \"discount\":660,\r\n        \"note\":\"test Note\"\r\n    }\r\n]",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1509,6 +1583,55 @@
 											"key": "dob",
 											"value": "1985-04-03",
 											"description": "name,dob,phone"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Search Contact",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/student/searchContact?contactId=52311",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"student",
+										"searchContact"
+									],
+									"query": [
+										{
+											"key": "contactId",
+											"value": "52311"
+										},
+										{
+											"key": "studentName",
+											"value": "chan",
+											"disabled": true
+										},
+										{
+											"key": "dob",
+											"value": "1998-04-02",
+											"disabled": true
+										},
+										{
+											"key": "phone",
+											"value": "011273010",
+											"disabled": true
 										}
 									]
 								}
