@@ -1637,6 +1637,88 @@
 								}
 							},
 							"response": []
+						},
+						{
+							"name": "Filter Contact",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/student/filterContact?fromDate=2021-04-25&toDate=2021-06-01&owner=sothea.korng",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"student",
+										"filterContact"
+									],
+									"query": [
+										{
+											"key": "fromDate",
+											"value": "2021-04-25"
+										},
+										{
+											"key": "toDate",
+											"value": "2021-06-01"
+										},
+										{
+											"key": "owner",
+											"value": "sothea.korng"
+										},
+										{
+											"key": "phone",
+											"value": "011273010",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Owner List",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/student/ownerlist",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"student",
+										"ownerlist"
+									],
+									"query": [
+										{
+											"key": "phone",
+											"value": "011273010",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
 						}
 					]
 				}
@@ -1947,12 +2029,62 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{baseUrl}}/class",
+									"raw": "{{baseUrl}}/class?grade=grade 1&studyYear=2021-2022",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
 										"class"
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "1",
+											"disabled": true
+										},
+										{
+											"key": "offset",
+											"value": "0",
+											"disabled": true
+										},
+										{
+											"key": "grade",
+											"value": "grade 1",
+											"description": "can combine for AND clause"
+										},
+										{
+											"key": "studyYear",
+											"value": "2021-2022",
+											"description": "can combine for AND clause"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Classes All",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/class/all",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"class",
+										"all"
 									],
 									"query": [
 										{
@@ -3766,8 +3898,7 @@
 	"variable": [
 		{
 			"key": "baseUrl",
-			"value": "https://acecapi.azurewebsites.net",
-			"disabled": true
+			"value": "https://acecapi.azurewebsites.net"
 		},
 		{
 			"key": "token",
@@ -3775,7 +3906,8 @@
 		},
 		{
 			"key": "baseUrl",
-			"value": "http://localhost:8080"
+			"value": "http://localhost:8080",
+			"disabled": true
 		}
 	]
 }
