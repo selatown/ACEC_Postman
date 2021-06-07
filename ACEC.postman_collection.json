@@ -2081,7 +2081,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{baseUrl}}/class/all",
+									"raw": "{{baseUrl}}/class/all?gradeName=all&grade=all&studyYear=2021-2022",
 									"host": [
 										"{{baseUrl}}"
 									],
@@ -2091,26 +2091,16 @@
 									],
 									"query": [
 										{
-											"key": "limit",
-											"value": "1",
-											"disabled": true
-										},
-										{
-											"key": "offset",
-											"value": "0",
-											"disabled": true
+											"key": "gradeName",
+											"value": "all"
 										},
 										{
 											"key": "grade",
-											"value": "grade 1",
-											"description": "can combine for AND clause",
-											"disabled": true
+											"value": "all"
 										},
 										{
 											"key": "studyYear",
-											"value": "2021-2022",
-											"description": "can combine for AND clause",
-											"disabled": true
+											"value": "2021-2022"
 										}
 									]
 								}
@@ -4002,6 +3992,615 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "Result",
+			"item": [
+				{
+					"name": "Setting",
+					"item": [
+						{
+							"name": "Get Result Setting",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/result/setting",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"result",
+										"setting"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Result Setting",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"studyYear\":\"2021-2022\",\n    \"periodType\":\"Semester\",\n    \"resultPeriod\":\"Today\",\n    \"resultStartMonth\":\"2021-04-02\",\n    \"resultEndMonth\":\"2021-05-02\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/result/setting",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"result",
+										"setting"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Result Setting",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"studyYear\":\"2021-2022\",\n    \"periodType\":\"Semester\",\n    \"resultPeriod\":\"Today\",\n    \"resultStartMonth\":\"2021-04-02\",\n    \"resultEndMonth\":\"2021-05-02\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/result/setting/1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"result",
+										"setting",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Result Setting",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/result/setting/1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"result",
+										"setting",
+										"1"
+									],
+									"query": [
+										{
+											"key": "studyYear",
+											"value": "2021-2022",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Detail",
+					"item": [
+						{
+							"name": "Get Result Detail",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/result/detail?studyYear=2021-2022&periodType=semester&resultPeriod=2 month&classId=1&createdBy=Sothea.korng",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"result",
+										"detail"
+									],
+									"query": [
+										{
+											"key": "studyYear",
+											"value": "2021-2022"
+										},
+										{
+											"key": "periodType",
+											"value": "semester"
+										},
+										{
+											"key": "resultPeriod",
+											"value": "2 month"
+										},
+										{
+											"key": "classId",
+											"value": "1"
+										},
+										{
+											"key": "createdBy",
+											"value": "Sothea.korng"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Result Detail",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"studyYear\":\"2021-2022\",\n    \"periodType\":\"Semester\",\n    \"resultPeriod\":\"Today\",\n    \"subjectId\":3,\n    \"score\":12.9,\n    \"grade\":\"Grade 4\",\n    \"enrollId\":\"CV-10002\",\n    \"comment\":\"No Comment\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/result/detail",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"result",
+										"detail"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Result Detail",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"score\":12.9,\n    \"grade\":\"Grade 4\",\n    \"comment\":\"No Comment\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/result/detail/1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"result",
+										"detail",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Result Setting",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/result/detail/1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"result",
+										"detail",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Grade",
+					"item": [
+						{
+							"name": "Get Result Grade",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/result/grade",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"result",
+										"grade"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Result Grade",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"studyYear\":\"2021-2022\",\n    \"minScore\":12.8,\n    \"maxScore\":14.2,\n    \"grade\":\"Grade 3\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/result/grade",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"result",
+										"grade"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Result Grade",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"studyYear\":\"2021-2022\",\n    \"minScore\":12.8,\n    \"maxScore\":14.2,\n    \"grade\":\"Grade 3\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/result/grade/1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"result",
+										"grade",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Result Setting",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/result/setting/1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"result",
+										"setting",
+										"1"
+									],
+									"query": [
+										{
+											"key": "studyYear",
+											"value": "2021-2022",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Get Result",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/result?studyYear=2021-2022&periodType=semester&resultPeriod=2 month&classId=1&createdBy=seyla.vichet",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"result"
+							],
+							"query": [
+								{
+									"key": "studyYear",
+									"value": "2021-2022"
+								},
+								{
+									"key": "periodType",
+									"value": "semester"
+								},
+								{
+									"key": "resultPeriod",
+									"value": "2 month"
+								},
+								{
+									"key": "classId",
+									"value": "1"
+								},
+								{
+									"key": "createdBy",
+									"value": "seyla.vichet"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Result",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/result/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"result",
+								"1"
+							],
+							"query": [
+								{
+									"key": "studyYear",
+									"value": "2021-2022",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Result",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"periodType\":\"Semester\",\n    \"resultPeriod\":\"Today\",\n    \"enrollId\":\"CV-0000001\",\n    \"campus\":\"CV\",\n    \"comments\":\"No Comment\",\n    \"totalScore\":15.9,\n    \"resultCompleted\":true,\n    \"resultStatus\":\"Passed\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/result",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"result"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Result",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"comments\":\"No Comment\",\n    \"totalScore\":15.9,\n    \"averageScore\":12.2,\n    \"grade\":\"Grade 3\",\n    \"ranking\":4,\n    \"passed\":true,\n    \"resultCompleted\":true,\n    \"resultStatus\":\"OK\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/result/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"result",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	],
 	"event": [
@@ -4027,8 +4626,7 @@
 	"variable": [
 		{
 			"key": "baseUrl",
-			"value": "https://acecapi.azurewebsites.net",
-			"disabled": true
+			"value": "https://acecapi.azurewebsites.net"
 		},
 		{
 			"key": "token",
@@ -4036,7 +4634,8 @@
 		},
 		{
 			"key": "baseUrl",
-			"value": "http://localhost:8080"
+			"value": "http://localhost:8080",
+			"disabled": true
 		}
 	]
 }
