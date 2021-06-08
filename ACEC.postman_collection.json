@@ -1421,7 +1421,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{baseUrl}}/period",
+									"raw": "{{baseUrl}}/period?serviceId=1",
 									"host": [
 										"{{baseUrl}}"
 									],
@@ -1430,19 +1430,8 @@
 									],
 									"query": [
 										{
-											"key": "limit",
-											"value": "1",
-											"disabled": true
-										},
-										{
-											"key": "offset",
-											"value": "0",
-											"disabled": true
-										},
-										{
-											"key": "search",
-											"value": "2021-2022",
-											"disabled": true
+											"key": "serviceId",
+											"value": "1"
 										}
 									]
 								}
@@ -1718,6 +1707,107 @@
 											"value": "011273010",
 											"disabled": true
 										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Setting",
+					"item": [
+						{
+							"name": "Get Transport Type",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/payment/setting/transportType",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"payment",
+										"setting",
+										"transportType"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Zone",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/payment/setting/zone",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"payment",
+										"setting",
+										"zone"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Set Fee",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"serviceId\":1,\n    \"grade\":\"Grade 7\",\n    \"periodId\":2,\n    \"fee\":5\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/payment/setting/fee",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"payment",
+										"setting",
+										"fee"
 									]
 								}
 							},
@@ -4626,7 +4716,8 @@
 	"variable": [
 		{
 			"key": "baseUrl",
-			"value": "https://acecapi.azurewebsites.net"
+			"value": "https://acecapi.azurewebsites.net",
+			"disabled": true
 		},
 		{
 			"key": "token",
@@ -4634,8 +4725,7 @@
 		},
 		{
 			"key": "baseUrl",
-			"value": "http://localhost:8080",
-			"disabled": true
+			"value": "http://localhost:8080"
 		}
 	]
 }
