@@ -1011,6 +1011,54 @@
 							"response": []
 						},
 						{
+							"name": "Get Service Fee",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.U09USEVBLktPUk5H.jLNKtxEsXrzKt4B1g_O-oFFCJdnbEDKjQ5YufmOASzg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/otherservicefee/servicefee?serviceId=10&periodId=0",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"otherservicefee",
+										"servicefee"
+									],
+									"query": [
+										{
+											"key": "serviceId",
+											"value": "10"
+										},
+										{
+											"key": "periodId",
+											"value": "0"
+										},
+										{
+											"key": "zone",
+											"value": "Zone 3",
+											"disabled": true
+										},
+										{
+											"key": "type",
+											"value": "Type 2",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
 							"name": "Get By Grade",
 							"request": {
 								"auth": {
@@ -1792,7 +1840,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"serviceId\":1,\n    \"grade\":\"Grade 7\",\n    \"periodId\":2,\n    \"fee\":5\n}",
+									"raw": "{\n    \"serviceId\":1,\n    \"grade\":\"Grade 7\",\n    \"periodId\":2,\n    \"fee\":5,\n    \"zone\":\"Zone 3\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -4277,6 +4325,50 @@
 										{
 											"key": "createdBy",
 											"value": "Sothea.korng"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Result Detail Filtered",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/result/detail/filtered?resultSettingId=1&classId=2",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"result",
+										"detail",
+										"filtered"
+									],
+									"query": [
+										{
+											"key": "resultSettingId",
+											"value": "1"
+										},
+										{
+											"key": "classId",
+											"value": "2"
+										},
+										{
+											"key": "subjectId",
+											"value": "3",
+											"disabled": true
 										}
 									]
 								}
