@@ -1026,7 +1026,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{baseUrl}}/otherservicefee/servicefee?serviceId=10&periodId=0",
+									"raw": "{{baseUrl}}/otherservicefee/servicefee?serviceId=10&periodId=0&program=c3",
 									"host": [
 										"{{baseUrl}}"
 									],
@@ -1043,6 +1043,50 @@
 											"key": "periodId",
 											"value": "0"
 										},
+										{
+											"key": "zone",
+											"value": "Zone 3",
+											"disabled": true
+										},
+										{
+											"key": "type",
+											"value": "Type 2",
+											"disabled": true
+										},
+										{
+											"key": "program",
+											"value": "c3"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get IS Program",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.U09USEVBLktPUk5H.jLNKtxEsXrzKt4B1g_O-oFFCJdnbEDKjQ5YufmOASzg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/otherservicefee/isprogram",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"otherservicefee",
+										"isprogram"
+									],
+									"query": [
 										{
 											"key": "zone",
 											"value": "Zone 3",
@@ -1289,24 +1333,12 @@
 									],
 									"query": [
 										{
-											"key": "limit",
-											"value": "1",
-											"disabled": true
-										},
-										{
-											"key": "offset",
-											"value": "0",
-											"disabled": true
-										},
-										{
 											"key": "grade",
-											"value": "grade 12",
-											"description": "can combine both for (AND) clause"
+											"value": "grade 12"
 										},
 										{
 											"key": "year",
-											"value": "2021-2022",
-											"description": "can combine both for (AND) clause"
+											"value": "2021-2022"
 										}
 									]
 								}
@@ -1329,7 +1361,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{baseUrl}}/tuitionfee/period?enrollId=VC-2",
+									"raw": "{{baseUrl}}/tuitionfee/period?enrollId=CV-00012841",
 									"host": [
 										"{{baseUrl}}"
 									],
@@ -1340,7 +1372,7 @@
 									"query": [
 										{
 											"key": "enrollId",
-											"value": "VC-2"
+											"value": "CV-00012841"
 										}
 									]
 								}
