@@ -58,7 +58,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{baseUrl}}/enroll?search=54211",
+									"raw": "{{baseUrl}}/enroll?contactId=54211",
 									"host": [
 										"{{baseUrl}}"
 									],
@@ -67,19 +67,8 @@
 									],
 									"query": [
 										{
-											"key": "limit",
-											"value": "1",
-											"disabled": true
-										},
-										{
-											"key": "offset",
-											"value": "0",
-											"disabled": true
-										},
-										{
-											"key": "search",
-											"value": "54211",
-											"description": "ContactID"
+											"key": "contactId",
+											"value": "54211"
 										}
 									]
 								}
@@ -1085,18 +1074,6 @@
 									"path": [
 										"otherservicefee",
 										"isprogram"
-									],
-									"query": [
-										{
-											"key": "zone",
-											"value": "Zone 3",
-											"disabled": true
-										},
-										{
-											"key": "type",
-											"value": "Type 2",
-											"disabled": true
-										}
 									]
 								}
 							},
