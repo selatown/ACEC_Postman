@@ -382,7 +382,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{baseUrl}}/payment/history?enrollId=CV-E1000003",
+									"raw": "{{baseUrl}}/payment/history?enrollId=CV-E1000015&contactId=54211",
 									"host": [
 										"{{baseUrl}}"
 									],
@@ -393,7 +393,11 @@
 									"query": [
 										{
 											"key": "enrollId",
-											"value": "CV-E1000003"
+											"value": "CV-E1000015"
+										},
+										{
+											"key": "contactId",
+											"value": "54211"
 										}
 									]
 								}
@@ -4401,7 +4405,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"studyYear\":\"2021-2022\",\n    \"periodType\":\"Semester\",\n    \"resultPeriod\":\"Today\",\n    \"subjectId\":3,\n    \"score\":12.9,\n    \"grade\":\"Grade 4\",\n    \"enrollId\":\"CV-10002\",\n    \"comment\":\"No Comment\"\n}",
+									"raw": "{\n    \"resultSettingId\":1,\n    \"studyYear\":\"2021-2022\",\n    \"periodType\":\"Semester\",\n    \"resultPeriod\":\"Today\",\n    \"subjectId\":3,\n    \"score\":12.9,\n    \"grade\":\"Grade 4\",\n    \"enrollId\":\"CV-10002\",\n    \"comment\":\"No Comment\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -4817,8 +4821,7 @@
 	"variable": [
 		{
 			"key": "baseUrl",
-			"value": "https://acecapi.azurewebsites.net",
-			"disabled": true
+			"value": "https://acecapi.azurewebsites.net"
 		},
 		{
 			"key": "token",
@@ -4826,7 +4829,8 @@
 		},
 		{
 			"key": "baseUrl",
-			"value": "http://localhost:8080"
+			"value": "http://localhost:8080",
+			"disabled": true
 		}
 	]
 }
