@@ -348,7 +348,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{baseUrl}}/payment/reprint?invoiceId=CV-1000021",
+									"raw": "{{baseUrl}}/payment/reprint?invoiceId=CV-1000073",
 									"host": [
 										"{{baseUrl}}"
 									],
@@ -359,7 +359,7 @@
 									"query": [
 										{
 											"key": "invoiceId",
-											"value": "CV-1000021"
+											"value": "CV-1000073"
 										},
 										{
 											"key": "receiptId",
@@ -502,6 +502,80 @@
 							"response": []
 						},
 						{
+							"name": "Get ELT Invoice List",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/payment/elt/invoicelist?contactId=54211&eltType=test",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"payment",
+										"elt",
+										"invoicelist"
+									],
+									"query": [
+										{
+											"key": "contactId",
+											"value": "54211"
+										},
+										{
+											"key": "eltType",
+											"value": "test"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get ELT Invoice Receipt",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/payment/elt/invoiceReceipt?receiptId=CV-1000073",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"payment",
+										"elt",
+										"invoiceReceipt"
+									],
+									"query": [
+										{
+											"key": "receiptId",
+											"value": "CV-1000073"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
 							"name": "Get Application Result",
 							"request": {
 								"auth": {
@@ -604,6 +678,44 @@
 									],
 									"path": [
 										"payment",
+										"makereceipt"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Make Elt Receipt",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"invoiceId\":\"CV-100038\",\r\n    \"paymentType\":\"asdasd\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/payment/elt/makereceipt",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"payment",
+										"elt",
 										"makereceipt"
 									]
 								}
@@ -3013,12 +3125,13 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{baseUrl}}/subject?subjectName=Science",
+									"raw": "{{baseUrl}}/subject/all?subjectName=Science",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
-										"subject"
+										"subject",
+										"all"
 									],
 									"query": [
 										{
