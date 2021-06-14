@@ -360,6 +360,11 @@
 										{
 											"key": "invoiceId",
 											"value": "CV-1000021"
+										},
+										{
+											"key": "receiptId",
+											"value": "CV-1000021",
+											"disabled": true
 										}
 									]
 								}
@@ -622,7 +627,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "[\r\n    {\r\n        \"invoiceId\":\"CV-1000019\",\r\n        \"tuitionFeeId\":44,\r\n        \"discount\":660,\r\n        \"note\":\"test Note\"\r\n    }\r\n]",
+									"raw": "[\r\n    {\r\n        \"invoiceId\":\"CV-1000019\",\r\n        \"tuitionFeeId\":44,\r\n        \"discount\":660,\r\n        \"note\":\"test Note\"\r\n    },\r\n    {\r\n        \"invoiceId\":\"CV-1000019\",\r\n        \"tuitionFeeId\":24,\r\n        \"discount\":660,\r\n        \"note\":\"test Note\"\r\n    }\r\n]",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -673,6 +678,43 @@
 									"path": [
 										"payment",
 										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Cancel Receipt",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"receiptId\":\"CV-1000021\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/payment/cancelreceipt",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"payment",
+										"cancelreceipt"
 									]
 								}
 							},
@@ -2949,6 +2991,39 @@
 										{
 											"key": "offset",
 											"value": "0"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Subjects",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/subject?subjectName=Science",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"subject"
+									],
+									"query": [
+										{
+											"key": "subjectName",
+											"value": "Science"
 										}
 									]
 								}
