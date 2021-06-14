@@ -569,6 +569,43 @@
 							"response": []
 						},
 						{
+							"name": "Make Receipt",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"invoiceId\":\"CV-100038\",\r\n    \"paymentType\":\"asdasd\",\r\n    \"note\":\"hello\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/payment/makereceipt",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"payment",
+										"makereceipt"
+									]
+								}
+							},
+							"response": []
+						},
+						{
 							"name": "Make Payment",
 							"request": {
 								"auth": {
@@ -729,7 +766,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"campus\":\"CV\",\r\n    \"enrollId\":\"CV-10\"\r\n}",
+									"raw": "{\r\n    \"contactId\":54211,\r\n    \"studyYear\":\"2021-2022\",\r\n    \"campus\":\"CV\",\r\n    \"enrollId\":\"\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -4179,6 +4216,41 @@
 							"response": []
 						},
 						{
+							"name": "Get Result Period Type",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/result/setting/periodtype?studyYear=2021-2022",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"result",
+										"setting",
+										"periodtype"
+									],
+									"query": [
+										{
+											"key": "studyYear",
+											"value": "2021-2022"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
 							"name": "Add Result Setting",
 							"request": {
 								"auth": {
@@ -4821,7 +4893,8 @@
 	"variable": [
 		{
 			"key": "baseUrl",
-			"value": "https://acecapi.azurewebsites.net"
+			"value": "https://acecapi.azurewebsites.net",
+			"disabled": true
 		},
 		{
 			"key": "token",
@@ -4829,8 +4902,7 @@
 		},
 		{
 			"key": "baseUrl",
-			"value": "http://localhost:8080",
-			"disabled": true
+			"value": "http://localhost:8080"
 		}
 	]
 }
