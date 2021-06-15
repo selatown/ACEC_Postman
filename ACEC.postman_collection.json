@@ -3993,6 +3993,87 @@
 							"response": []
 						}
 					]
+				},
+				{
+					"name": "Student Schedule",
+					"item": [
+						{
+							"name": "Get By Study Year",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/studentschedule/byStudyYear?studyYear=2021-2022&periodId=23",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"studentschedule",
+										"byStudyYear"
+									],
+									"query": [
+										{
+											"key": "studyYear",
+											"value": "2021-2022"
+										},
+										{
+											"key": "periodId",
+											"value": "23"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get By ContactId",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/studentschedule/byStudentId?studentId=54211&periodId=3",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"studentschedule",
+										"byStudentId"
+									],
+									"query": [
+										{
+											"key": "studentId",
+											"value": "54211"
+										},
+										{
+											"key": "periodId",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
 				}
 			]
 		},
@@ -5090,7 +5171,12 @@
 		},
 		{
 			"key": "baseUrl",
-			"value": "http://localhost:8080"
+			"value": "http://localhost:8080",
+			"disabled": true
+		},
+		{
+			"key": "baseUrl",
+			"value": "https://acecapi.herokuapp.com"
 		}
 	]
 }
