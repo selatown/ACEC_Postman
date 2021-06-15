@@ -333,6 +333,34 @@
 							"response": []
 						},
 						{
+							"name": "Get Payment Type",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/payment/type",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"payment",
+										"type"
+									]
+								}
+							},
+							"response": []
+						},
+						{
 							"name": "Reprint",
 							"request": {
 								"auth": {
@@ -2944,7 +2972,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{baseUrl}}/classschedule/byclassandperiod?classId=12&periodId=2",
+									"raw": "{{baseUrl}}/classschedule/byclassandperiod?classId=12&periodId=2&gradeName=Grade 3",
 									"host": [
 										"{{baseUrl}}"
 									],
@@ -2960,6 +2988,10 @@
 										{
 											"key": "periodId",
 											"value": "2"
+										},
+										{
+											"key": "gradeName",
+											"value": "Grade 3"
 										}
 									]
 								}
@@ -5171,12 +5203,12 @@
 		},
 		{
 			"key": "baseUrl",
-			"value": "http://localhost:8080",
-			"disabled": true
+			"value": "http://localhost:8080"
 		},
 		{
 			"key": "baseUrl",
-			"value": "https://acecapi.herokuapp.com"
+			"value": "https://acecapi.herokuapp.com",
+			"disabled": true
 		}
 	]
 }
