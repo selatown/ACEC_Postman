@@ -997,6 +997,44 @@
 							"response": []
 						},
 						{
+							"name": "Search Invoice List",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/invoice/search?searchField=InvoiceID&searchValue=CV",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"invoice",
+										"search"
+									],
+									"query": [
+										{
+											"key": "searchField",
+											"value": "InvoiceID"
+										},
+										{
+											"key": "searchValue",
+											"value": "CV"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
 							"name": "Delete Invoice",
 							"request": {
 								"auth": {
