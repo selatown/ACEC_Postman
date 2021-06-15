@@ -5012,6 +5012,48 @@
 					]
 				},
 				{
+					"name": "Final",
+					"item": [
+						{
+							"name": "Commit Result",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"resultSettingId\":2,\n    \"classId\":12\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/result/final",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"result",
+										"final"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
 					"name": "Get Result",
 					"request": {
 						"auth": {
