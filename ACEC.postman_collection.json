@@ -5092,6 +5092,50 @@
 					]
 				},
 				{
+					"name": "Class",
+					"item": [
+						{
+							"name": "Get By Id",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/result/class/byId?classId=12&studyYear=2021-2022",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"result",
+										"class",
+										"byId"
+									],
+									"query": [
+										{
+											"key": "classId",
+											"value": "12"
+										},
+										{
+											"key": "studyYear",
+											"value": "2021-2022"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
 					"name": "Get Result",
 					"request": {
 						"auth": {
