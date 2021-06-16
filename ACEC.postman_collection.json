@@ -5132,6 +5132,49 @@
 								}
 							},
 							"response": []
+						},
+						{
+							"name": "Get Committed Result",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/result/class/committed?resultSettingId=0&classId=12&subjectId=0",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"result",
+										"class",
+										"committed"
+									],
+									"query": [
+										{
+											"key": "resultSettingId",
+											"value": "0"
+										},
+										{
+											"key": "classId",
+											"value": "12"
+										},
+										{
+											"key": "subjectId",
+											"value": "0"
+										}
+									]
+								}
+							},
+							"response": []
 						}
 					]
 				},
