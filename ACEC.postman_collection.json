@@ -5175,6 +5175,101 @@
 								}
 							},
 							"response": []
+						},
+						{
+							"name": "Get Performance",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/result/class/performance?resultSettingId=0&classId=12&subjectId=0",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"result",
+										"class",
+										"performance"
+									],
+									"query": [
+										{
+											"key": "resultSettingId",
+											"value": "0"
+										},
+										{
+											"key": "classId",
+											"value": "12"
+										},
+										{
+											"key": "subjectId",
+											"value": "0"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Student",
+					"item": [
+						{
+							"name": "Get Student Performance",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/result/student/performance?resultSettingId=2&classId=12&subjectId=0&studentId=54211",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"result",
+										"student",
+										"performance"
+									],
+									"query": [
+										{
+											"key": "resultSettingId",
+											"value": "2"
+										},
+										{
+											"key": "classId",
+											"value": "12"
+										},
+										{
+											"key": "subjectId",
+											"value": "0"
+										},
+										{
+											"key": "studentId",
+											"value": "54211"
+										}
+									]
+								}
+							},
+							"response": []
 						}
 					]
 				},
