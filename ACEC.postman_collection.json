@@ -2029,6 +2029,138 @@
 								}
 							},
 							"response": []
+						},
+						{
+							"name": "Add Personal Contact",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"familyName\":\"\",\n    \"givenName\":\"\",\n    \"familyNameKh\":\"\",\n    \"givenNameKh\":\"\",\n    \"dob\":\"\",\n    \"gender\":\"\",\n    \"nationality\":\"\",\n    \"currentLevel\":\"\",\n    \"applyFor\":\"\",\n    \"currentAddress\":\"\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/student/personalContact",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"student",
+										"personalContact"
+									],
+									"query": [
+										{
+											"key": "phone",
+											"value": "011273010",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Education Background",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"contactId\":0,\n    \"schoolName\":\"\",\n    \"yearLevel\":\"\",\n    \"languageInstruction\":\"\",\n    \"studyStartPeriod\":0,\n    \"studyEndPeriod\":0\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/student/educationBackground",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"student",
+										"educationBackground"
+									],
+									"query": [
+										{
+											"key": "phone",
+											"value": "011273010",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Parent",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"contactId\":0,\n    \"familyType\":\"\",\n    \"familyName\":\"\",\n    \"givenName\":\"\",\n    \"dob\":\"\",\n    \"nationality\":\"\",\n    \"occupation\":\"\",\n    \"company\":\"\",\n    \"phone\":\"\",\n    \"email\":\"\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/student/parent",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"student",
+										"parent"
+									],
+									"query": [
+										{
+											"key": "phone",
+											"value": "011273010",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
 						}
 					]
 				},
