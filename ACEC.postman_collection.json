@@ -1313,6 +1313,34 @@
 							"response": []
 						},
 						{
+							"name": "Get Fee Type",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.U09USEVBLktPUk5H.jLNKtxEsXrzKt4B1g_O-oFFCJdnbEDKjQ5YufmOASzg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/otherservicefee/feetype",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"otherservicefee",
+										"feetype"
+									]
+								}
+							},
+							"response": []
+						},
+						{
 							"name": "Get IS Program",
 							"request": {
 								"auth": {
@@ -4298,7 +4326,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseUrl}}/report/schoolfee?fromDate=2021-04-28&toDate=2021-05-28&campus=CV",
+							"raw": "{{baseUrl}}/report/schoolfee?fromDate=2021-04-28&toDate=2021-05-28&campus=CV&feeType=bus",
 							"host": [
 								"{{baseUrl}}"
 							],
@@ -4318,6 +4346,10 @@
 								{
 									"key": "campus",
 									"value": "CV"
+								},
+								{
+									"key": "feeType",
+									"value": "bus"
 								}
 							]
 						}
