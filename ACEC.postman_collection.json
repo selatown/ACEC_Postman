@@ -2059,17 +2059,94 @@
 							"response": []
 						},
 						{
+							"name": "Get Nationalities",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/student/nationalities",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"student",
+										"nationalities"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Schools",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/student/schools",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"student",
+										"schools"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Companies",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/student/companies",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"student",
+										"companies"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Languages",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/student/languages",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"student",
+										"languages"
+									]
+								}
+							},
+							"response": []
+						},
+						{
 							"name": "Add Personal Contact",
 							"request": {
 								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{token}}",
-											"type": "string"
-										}
-									]
+									"type": "noauth"
 								},
 								"method": "POST",
 								"header": [],
@@ -5101,6 +5178,45 @@
 							"response": []
 						},
 						{
+							"name": "Get Final Result Grade By Year",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/result/grade/final?studyYear=2021-2022&score=90",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"result",
+										"grade",
+										"final"
+									],
+									"query": [
+										{
+											"key": "studyYear",
+											"value": "2021-2022"
+										},
+										{
+											"key": "score",
+											"value": "90"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
 							"name": "Add Result Grade",
 							"request": {
 								"auth": {
@@ -5589,6 +5705,162 @@
 							"path": [
 								"result",
 								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Card",
+			"item": [
+				{
+					"name": "Get Student List",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/card/students?studyYear=2021-2022&campus=CV&isLost=false",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"card",
+								"students"
+							],
+							"query": [
+								{
+									"key": "studyYear",
+									"value": "2021-2022"
+								},
+								{
+									"key": "campus",
+									"value": "CV"
+								},
+								{
+									"key": "isLost",
+									"value": "false"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Students From Batch",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/card/studentsfrombatch?batch=CV-2021-2022-New Card-2021-06-22",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"card",
+								"studentsfrombatch"
+							],
+							"query": [
+								{
+									"key": "batch",
+									"value": "CV-2021-2022-New Card-2021-06-22"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Batches",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/card/batches?campus=CV&date=2021-06-22",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"card",
+								"batches"
+							],
+							"query": [
+								{
+									"key": "campus",
+									"value": "CV"
+								},
+								{
+									"key": "date",
+									"value": "2021-06-22"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Student List Copy",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"enrolIds\":\"CV-E1000018\",\n    \"isLost\":false,\n    \"batchType\":\"New Card\",\n    \"batchName\":\"CV-2021-2022-New Card-2021-06-22\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/card/issue",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"card",
+								"issue"
 							]
 						}
 					},
