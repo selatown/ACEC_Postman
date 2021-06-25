@@ -767,7 +767,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "[\r\n    {\r\n        \"invoiceId\":\"CV-1000019\",\r\n        \"tuitionFeeId\":44,\r\n        \"discount\":660,\r\n        \"note\":\"test Note\"\r\n    },\r\n    {\r\n        \"invoiceId\":\"CV-1000019\",\r\n        \"tuitionFeeId\":24,\r\n        \"discount\":660,\r\n        \"note\":\"test Note\"\r\n    }\r\n]",
+									"raw": "[\r\n    {\r\n        \"invoiceId\":\"CV-1000019\",\r\n        \"tuitionFeeId\":44,\r\n        \"discount\":660,\r\n        \"amount\":12,\r\n        \"note\":\"test Note\"\r\n    },\r\n    {\r\n        \"invoiceId\":\"CV-1000019\",\r\n        \"tuitionFeeId\":24,\r\n        \"discount\":660,\r\n        \"amount\":2,\r\n        \"note\":\"test Note\"\r\n    }\r\n]",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1313,6 +1313,44 @@
 							"response": []
 						},
 						{
+							"name": "Get Note",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.U09USEVBLktPUk5H.jLNKtxEsXrzKt4B1g_O-oFFCJdnbEDKjQ5YufmOASzg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/otherservicefee/note?category=lunch&contactId=54211",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"otherservicefee",
+										"note"
+									],
+									"query": [
+										{
+											"key": "category",
+											"value": "lunch"
+										},
+										{
+											"key": "contactId",
+											"value": "54211"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
 							"name": "Get Fee Type",
 							"request": {
 								"auth": {
@@ -1536,6 +1574,44 @@
 									"path": [
 										"otherservicefee",
 										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Note",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"category\":\"lunch\",\r\n    \"note\":\"test\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/otherservicefee/note/54211",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"otherservicefee",
+										"note",
+										"54211"
 									]
 								}
 							},
@@ -2137,6 +2213,28 @@
 									"path": [
 										"student",
 										"languages"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Student Photo",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/student/photo/8293419",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"student",
+										"photo",
+										"8293419"
 									]
 								}
 							},
@@ -5758,6 +5856,40 @@
 					"response": []
 				},
 				{
+					"name": "Get Card Template",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/card/template?side=back",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"card",
+								"template"
+							],
+							"query": [
+								{
+									"key": "side",
+									"value": "back"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Get Students From Batch",
 					"request": {
 						"auth": {
@@ -5773,7 +5905,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseUrl}}/card/studentsfrombatch?batch=CV-2021-2022-New Card-2021-06-22",
+							"raw": "{{baseUrl}}/card/studentsfrombatch?batch=CV-2021-2022-New Card-2021-06-23",
 							"host": [
 								"{{baseUrl}}"
 							],
@@ -5784,7 +5916,7 @@
 							"query": [
 								{
 									"key": "batch",
-									"value": "CV-2021-2022-New Card-2021-06-22"
+									"value": "CV-2021-2022-New Card-2021-06-23"
 								}
 							]
 						}
@@ -5807,7 +5939,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseUrl}}/card/batches?campus=CV&date=2021-06-22",
+							"raw": "{{baseUrl}}/card/batches?campus=CV&date=2021-06-23",
 							"host": [
 								"{{baseUrl}}"
 							],
@@ -5822,7 +5954,7 @@
 								},
 								{
 									"key": "date",
-									"value": "2021-06-22"
+									"value": "2021-06-23"
 								}
 							]
 						}
@@ -5830,7 +5962,7 @@
 					"response": []
 				},
 				{
-					"name": "Get Student List Copy",
+					"name": "Issue Card",
 					"request": {
 						"auth": {
 							"type": "bearer",
