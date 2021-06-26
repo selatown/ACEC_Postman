@@ -1012,7 +1012,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{baseUrl}}/invoice/search?searchField=InvoiceID&searchValue=CV",
+									"raw": "{{baseUrl}}/invoice/search?searchField=InvoiceID&searchValue=CV&startDate=2021-04-02&endDate=2021-06-02",
 									"host": [
 										"{{baseUrl}}"
 									],
@@ -1028,6 +1028,14 @@
 										{
 											"key": "searchValue",
 											"value": "CV"
+										},
+										{
+											"key": "startDate",
+											"value": "2021-04-02"
+										},
+										{
+											"key": "endDate",
+											"value": "2021-06-02"
 										}
 									]
 								}
@@ -5993,6 +6001,82 @@
 							"path": [
 								"card",
 								"issue"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Printed Batch",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"enrolIds\":\"CV-E1000018\",\n    \"isLost\":false,\n    \"batchType\":\"New Card\",\n    \"batchName\":\"CV-2021-2022-New Card-2021-06-22\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/card/printed/CV-2021-2022-New Card-2021-06-25",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"card",
+								"printed",
+								"CV-2021-2022-New Card-2021-06-25"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delivered Batch",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"enrolIds\":\"CV-E1000018\",\n    \"isLost\":false,\n    \"batchType\":\"New Card\",\n    \"batchName\":\"CV-2021-2022-New Card-2021-06-22\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/card/delivered/CV-2021-2022-New Card-2021-06-25",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"card",
+								"delivered",
+								"CV-2021-2022-New Card-2021-06-25"
 							]
 						}
 					},
