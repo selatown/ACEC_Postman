@@ -1012,7 +1012,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{baseUrl}}/invoice/search?searchField=InvoiceID&searchValue=CV&startDate=2021-04-02&endDate=2021-06-02",
+									"raw": "{{baseUrl}}/invoice/search?searchField=ContactID&searchValue=54211&startDate=2021-01-02&endDate=2021-07-02",
 									"host": [
 										"{{baseUrl}}"
 									],
@@ -1023,19 +1023,19 @@
 									"query": [
 										{
 											"key": "searchField",
-											"value": "InvoiceID"
+											"value": "ContactID"
 										},
 										{
 											"key": "searchValue",
-											"value": "CV"
+											"value": "54211"
 										},
 										{
 											"key": "startDate",
-											"value": "2021-04-02"
+											"value": "2021-01-02"
 										},
 										{
 											"key": "endDate",
-											"value": "2021-06-02"
+											"value": "2021-07-02"
 										}
 									]
 								}
@@ -1352,6 +1352,40 @@
 										{
 											"key": "contactId",
 											"value": "54211"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Books",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.U09USEVBLktPUk5H.jLNKtxEsXrzKt4B1g_O-oFFCJdnbEDKjQ5YufmOASzg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/otherservicefee/books?grade=Grade 12",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"otherservicefee",
+										"books"
+									],
+									"query": [
+										{
+											"key": "grade",
+											"value": "Grade 12"
 										}
 									]
 								}
@@ -2488,14 +2522,7 @@
 							"name": "Get Grades",
 							"request": {
 								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{token}}",
-											"type": "string"
-										}
-									]
+									"type": "noauth"
 								},
 								"method": "GET",
 								"header": [],
@@ -5837,7 +5864,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseUrl}}/card/students?studyYear=2021-2022&campus=CV&isLost=false",
+							"raw": "{{baseUrl}}/card/students?studyYear=2021-2022&campus=CV&isLost=false&printStatus=printed",
 							"host": [
 								"{{baseUrl}}"
 							],
@@ -5857,6 +5884,10 @@
 								{
 									"key": "isLost",
 									"value": "false"
+								},
+								{
+									"key": "printStatus",
+									"value": "printed"
 								}
 							]
 						}
@@ -5913,7 +5944,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseUrl}}/card/studentsfrombatch?batch=CV-2021-2022-New Card-2021-06-23",
+							"raw": "{{baseUrl}}/card/studentsfrombatch?batch=CV-2021-2022-New Card-2021-06-25",
 							"host": [
 								"{{baseUrl}}"
 							],
@@ -5924,7 +5955,7 @@
 							"query": [
 								{
 									"key": "batch",
-									"value": "CV-2021-2022-New Card-2021-06-23"
+									"value": "CV-2021-2022-New Card-2021-06-25"
 								}
 							]
 						}
@@ -5947,7 +5978,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseUrl}}/card/batches?campus=CV&date=2021-06-23",
+							"raw": "{{baseUrl}}/card/batches?campus=CV&startDate=2021-06-25&endDate=2021-06-25",
 							"host": [
 								"{{baseUrl}}"
 							],
@@ -5961,8 +5992,12 @@
 									"value": "CV"
 								},
 								{
-									"key": "date",
-									"value": "2021-06-23"
+									"key": "startDate",
+									"value": "2021-06-25"
+								},
+								{
+									"key": "endDate",
+									"value": "2021-06-25"
 								}
 							]
 						}
