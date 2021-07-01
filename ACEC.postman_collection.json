@@ -2509,6 +2509,189 @@
 							"response": []
 						}
 					]
+				},
+				{
+					"name": "Item",
+					"item": [
+						{
+							"name": "Get Items",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/item?grade=Grade 3",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"item"
+									],
+									"query": [
+										{
+											"key": "grade",
+											"value": "Grade 3"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Item Types",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/item?grade=Grade 3",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"item"
+									],
+									"query": [
+										{
+											"key": "grade",
+											"value": "Grade 3"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Item",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"itemName\":\"Burger\",\n    \"itemType\":\"Food\",\n    \"price\":2,\n    \"grade\":\"Grade 3\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/item",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"item"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Name",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"newName\":\"Khmer TextBook\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/item/name/473",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"item",
+										"name",
+										"473"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Price",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"newPrice\":6\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/item/price/473",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"item",
+										"price",
+										"473"
+									]
+								}
+							},
+							"response": []
+						}
+					]
 				}
 			]
 		},
@@ -5895,6 +6078,34 @@
 					"response": []
 				},
 				{
+					"name": "Get Guardians",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/card/guardians",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"card",
+								"guardians"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Get Card Template",
 					"request": {
 						"auth": {
@@ -5951,6 +6162,40 @@
 							"path": [
 								"card",
 								"studentsfrombatch"
+							],
+							"query": [
+								{
+									"key": "batch",
+									"value": "CV-2021-2022-New Card-2021-06-25"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Guardians From Batch",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/card/guardiansfrombatch?batch=CV-2021-2022-New Card-2021-06-25",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"card",
+								"guardiansfrombatch"
 							],
 							"query": [
 								{
@@ -6035,6 +6280,44 @@
 							],
 							"path": [
 								"card",
+								"issue"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Issue Guardian Cards",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"guardianIds\":\"125224121,125190121,125189121,54211\",\n    \"isLost\":false,\n    \"batchType\":\"New Card\",\n    \"batchName\":\"P-2021-2022-New Card-2021-06-29\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/card/guardians/issue",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"card",
+								"guardians",
 								"issue"
 							]
 						}
