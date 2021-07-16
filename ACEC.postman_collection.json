@@ -376,7 +376,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{baseUrl}}/payment/reprint?invoiceId=CV-1000073",
+									"raw": "{{baseUrl}}/payment/reprint?invoiceId=CV-1000167",
 									"host": [
 										"{{baseUrl}}"
 									],
@@ -387,7 +387,7 @@
 									"query": [
 										{
 											"key": "invoiceId",
-											"value": "CV-1000073"
+											"value": "CV-1000167"
 										},
 										{
 											"key": "receiptId",
@@ -767,7 +767,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "[\r\n    {\r\n        \"invoiceId\":\"CV-1000019\",\r\n        \"tuitionFeeId\":44,\r\n        \"discount\":660,\r\n        \"amount\":12,\r\n        \"note\":\"test Note\"\r\n    },\r\n    {\r\n        \"invoiceId\":\"CV-1000019\",\r\n        \"tuitionFeeId\":24,\r\n        \"discount\":660,\r\n        \"amount\":2,\r\n        \"note\":\"test Note\"\r\n    }\r\n]",
+									"raw": "[\r\n    {\r\n        \"invoiceId\":\"CV-1000175\",\r\n        \"tuitionFeeId\":64,\r\n        \"discount\":660,\r\n        \"note\":\"test Note\"\r\n    }\r\n]",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -5080,7 +5080,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"chipId\":\"5937937\",\n    \"contactId\":0,\n    \"currentDateTime\":null\n}",
+							"raw": "{\n    \"chipId\":\"0009970105\",\n    \"contactId\":0,\n    \"currentDateTime\":null,\n    \"checkBy\":\"student\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -5095,6 +5095,243 @@
 							"path": [
 								"attendance",
 								"checkin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Pick Up",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"chipId\":\"0009970105\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/attendance/pickup",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"attendance",
+								"pickup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Pickup List",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/attendance/pickup",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"attendance",
+								"pickup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Permissions",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/attendance/absence/permissions",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"attendance",
+								"absence",
+								"permissions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Permission",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"studentId\":1,\n    \"startDate\":\"2021-02-04\",\n    \"endDate\":\"2021-04-02\",\n    \"days\":23,\n    \"reason\":\"sick\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/attendance/absence/permissions",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"attendance",
+								"absence",
+								"permissions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Permission",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"studentId\":242,\n    \"startDate\":\"2021-02-04\",\n    \"endDate\":\"2021-04-02\",\n    \"days\":23,\n    \"reason\":\"sick\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/attendance/absence/permissions/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"attendance",
+								"absence",
+								"permissions",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Permission",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/attendance/absence/permissions/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"attendance",
+								"absence",
+								"permissions",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Permissions By Student ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/attendance/absence/permissions/bystudentid?studentId=125190121",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"attendance",
+								"absence",
+								"permissions",
+								"bystudentid"
+							],
+							"query": [
+								{
+									"key": "studentId",
+									"value": "125190121"
+								}
 							]
 						}
 					},
@@ -6212,7 +6449,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseUrl}}/card/studentsfrombatch?batch=CV-2021-2022-New Card-2021-06-25",
+							"raw": "{{baseUrl}}/card/studentsfrombatch?batch=CV-2021-2022-New Card-2021-07-14",
 							"host": [
 								"{{baseUrl}}"
 							],
@@ -6223,7 +6460,7 @@
 							"query": [
 								{
 									"key": "batch",
-									"value": "CV-2021-2022-New Card-2021-06-25"
+									"value": "CV-2021-2022-New Card-2021-07-14"
 								}
 							]
 						}
@@ -6246,7 +6483,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseUrl}}/card/guardiansfrombatch?batch=CV-2021-2022-New Card-2021-06-25",
+							"raw": "{{baseUrl}}/card/guardiansfrombatch?batch=PR-2021-2022-New Card-2021-07-14-1",
 							"host": [
 								"{{baseUrl}}"
 							],
@@ -6257,7 +6494,7 @@
 							"query": [
 								{
 									"key": "batch",
-									"value": "CV-2021-2022-New Card-2021-06-25"
+									"value": "PR-2021-2022-New Card-2021-07-14-1"
 								}
 							]
 						}
@@ -6280,7 +6517,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseUrl}}/card/batches?campus=CV&startDate=2021-06-25&endDate=2021-06-25",
+							"raw": "{{baseUrl}}/card/batches?campus=PR&startDate=2021-06-30&endDate=2021-07-30",
 							"host": [
 								"{{baseUrl}}"
 							],
@@ -6291,15 +6528,15 @@
 							"query": [
 								{
 									"key": "campus",
-									"value": "CV"
+									"value": "PR"
 								},
 								{
 									"key": "startDate",
-									"value": "2021-06-25"
+									"value": "2021-06-30"
 								},
 								{
 									"key": "endDate",
-									"value": "2021-06-25"
+									"value": "2021-07-30"
 								}
 							]
 						}
@@ -6360,7 +6597,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"guardianIds\":\"125224121,125190121,125189121,54211\",\n    \"isLost\":false,\n    \"batchType\":\"New Card\",\n    \"batchName\":\"P-2021-2022-New Card-2021-06-29\"\n}",
+							"raw": "{\n    \"guardianIds\":\"125224121,125190121,125189121,54211\",\n    \"isLost\":false,\n    \"batchType\":\"New Card\",\n    \"batchName\":\"PR-2021-2022-New Card-2021-06-28\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -6454,6 +6691,15 @@
 								"CV-2021-2022-New Card-2021-06-25"
 							]
 						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
 					},
 					"response": []
 				}
