@@ -5293,7 +5293,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"studentId\":242,\n    \"startDate\":\"2021-02-04\",\n    \"endDate\":\"2021-04-02\",\n    \"days\":23,\n    \"reason\":\"sick\"\n}",
+							"raw": "{\n    \"studentId\":242,\n    \"startDate\":\"2021-02-04\",\n    \"endDate\":\"2021-04-02\",\n    \"days\":23,\n    \"reason\":\"sick\",\n    \"approvedStatus\":\"Approved\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
