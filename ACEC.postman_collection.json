@@ -5195,6 +5195,50 @@
 					"response": []
 				},
 				{
+					"name": "Get Permissions Filtered",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/attendance/absence/permissions/filtered?fromDate=2021-01-01&toDate=2022-02-02&status=All",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"attendance",
+								"absence",
+								"permissions",
+								"filtered"
+							],
+							"query": [
+								{
+									"key": "fromDate",
+									"value": "2021-01-01"
+								},
+								{
+									"key": "toDate",
+									"value": "2022-02-02"
+								},
+								{
+									"key": "status",
+									"value": "All"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Add Permission",
 					"request": {
 						"auth": {
