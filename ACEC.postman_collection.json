@@ -5080,7 +5080,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"chipId\":\"0009970105\",\n    \"contactId\":0,\n    \"currentDateTime\":null,\n    \"checkBy\":\"student\"\n}",
+							"raw": "{\n    \"chipId\":\"123456789\",\n    \"contactId\":0,\n    \"currentDateTime\":null,\n    \"checkBy\":\"student\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -5301,7 +5301,7 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/attendance/absence/permissions/1",
+							"raw": "{{baseUrl}}/attendance/absence/permissions/4",
 							"host": [
 								"{{baseUrl}}"
 							],
@@ -5309,7 +5309,7 @@
 								"attendance",
 								"absence",
 								"permissions",
-								"1"
+								"4"
 							]
 						}
 					},
@@ -6527,7 +6527,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseUrl}}/card/guardiansfrombatch?batch=PR-2021-2022-New Card-2021-07-14-1",
+							"raw": "{{baseUrl}}/card/guardiansfrombatch?batch=PR-2021-2022-New Card-2021-07-21",
 							"host": [
 								"{{baseUrl}}"
 							],
@@ -6538,7 +6538,7 @@
 							"query": [
 								{
 									"key": "batch",
-									"value": "PR-2021-2022-New Card-2021-07-14-1"
+									"value": "PR-2021-2022-New Card-2021-07-21"
 								}
 							]
 						}
@@ -6744,6 +6744,372 @@
 						"method": "GET",
 						"header": [],
 						"url": null
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Inbox",
+			"item": [
+				{
+					"name": "Get Inbox List",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/inbox",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"inbox"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get IS Program",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/inbox/ISProgram",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"inbox",
+								"ISProgram"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Current Term",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/inbox/currentTerm",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"inbox",
+								"currentTerm"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Grades By Program",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/inbox/gradesByProgram?program=IS",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"inbox",
+								"gradesByProgram"
+							],
+							"query": [
+								{
+									"key": "program",
+									"value": "IS"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get IS Classes",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/inbox/gradesByProgram?program=IS&grade=12&studyYear=2021-2022",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"inbox",
+								"gradesByProgram"
+							],
+							"query": [
+								{
+									"key": "program",
+									"value": "IS"
+								},
+								{
+									"key": "grade",
+									"value": "12"
+								},
+								{
+									"key": "studyYear",
+									"value": "2021-2022"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get EP Program",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/inbox/EPProgram?term=2021-T1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"inbox",
+								"EPProgram"
+							],
+							"query": [
+								{
+									"key": "term",
+									"value": "2021-T1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Courses",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/inbox/courses?term=2021-T2&program=IS",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"inbox",
+								"courses"
+							],
+							"query": [
+								{
+									"key": "term",
+									"value": "2021-T2"
+								},
+								{
+									"key": "program",
+									"value": "IS"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get English Classes",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/inbox/englishClasses?term=2021-T1&courseName=foo",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"inbox",
+								"englishClasses"
+							],
+							"query": [
+								{
+									"key": "term",
+									"value": "2021-T1"
+								},
+								{
+									"key": "courseName",
+									"value": "foo"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get IS Contact List",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/inbox/ISContactList?studyYear=2021-2022&program=IS&grade=12&classId=12",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"inbox",
+								"ISContactList"
+							],
+							"query": [
+								{
+									"key": "studyYear",
+									"value": "2021-2022"
+								},
+								{
+									"key": "program",
+									"value": "IS"
+								},
+								{
+									"key": "grade",
+									"value": "12"
+								},
+								{
+									"key": "classId",
+									"value": "12"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get EP Contact List",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/inbox/EPContactList?term=2021-T2&program=IS&courseName=book2&classId=12",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"inbox",
+								"EPContactList"
+							],
+							"query": [
+								{
+									"key": "term",
+									"value": "2021-T2"
+								},
+								{
+									"key": "program",
+									"value": "IS"
+								},
+								{
+									"key": "courseName",
+									"value": "book2"
+								},
+								{
+									"key": "classId",
+									"value": "12"
+								}
+							]
+						}
 					},
 					"response": []
 				}
